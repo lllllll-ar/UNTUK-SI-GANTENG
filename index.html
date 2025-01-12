@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background: url('BG.jpg') no-repeat center center fixed;
+            background-size: cover;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden;
+        }
+        .heart {
+            width: 110px;
+            height: 110px;
+            background: url('hiu.png') no-repeat center center;
+            background-size: contain;
+            position: relative;
+            cursor: pointer;
+            animation: heartbeat 1s infinite;
+            margin: 0 auto;
+        }
+        #clickMessage {
+            margin-top: 10px;
+            font-size: 18px;
+            color:  #5dade2;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
+            position: absolute;
+            top: 60%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+        @keyframes heartbeat {
+            0%, 100% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.2);
+            }
+        }
+        .hidden {
+            display: none;
+        }
+        .frame {
+            margin-top: 20px;
+            padding: 20px;
+            border: 5px solid #ffffff;
+            border-radius: 10px;
+            background-color: rgba(255, 255, 255, 0.8);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .next-button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color:  #5dade2;
+            color: #ffffff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .next-button:hover {
+            background-color:  #5dade2;
+        }
+        .frame-text {
+            margin-top: 15px;
+            font-size: 16px;
+            color: #333;
+        }
+
+        #page6 {
+            overflow-y: auto; /* Mengizinkan scroll pada halaman terakhir */
+            max-height: 100vh;
+        }
+
+        #page4 {
+            overflow-y: auto; /* Mengizinkan scroll pada halaman terakhir */
+            max-height: 100vh;
+        }
+
+        #page5 {
+            overflow-y: auto; /* Mengizinkan scroll pada halaman terakhir */
+            max-height: 100vh;
+        }
+
+    </style>
+</head>
+<body>
+    <!-- Audio element added but set to not autoplay initially -->
+    <audio id="background-audio">
+        <source src="KIDO3008 - U(You) (Lyric Video).mp3" type="audio/mp3">
+        Your browser does not support the audio element.
+    </audio>
+
+    <div id="page1">
+        <div class="heart" onclick="heartClicked()"></div>
+        <div id="clickMessage">Pencet dong hiu nya ganteng!!</div>
+    </div>
+
+    <div id="page2" class="hidden">
+        <div class="frame">
+            <img src="hi.gif" alt="Framed Content" style="max-width: 100%; height: auto;">
+            <div class="frame-text">Hallo Zafran ganteng!</div>
+        </div>
+        <button class="next-button" onclick="nextPage(3)">Next</button>
+    </div>
+
+    <div id="page3" class="hidden">
+        <div class="frame">
+            <img src="ps.gif" alt="Framed Content" style="max-width: 100%; height: auto;">
+            <div class="frame-text">Audie ada pesan nih buat kamu</div>
+        </div>
+        <button class="next-button" onclick="nextPage(4)">Next</button>
+    </div>
+
+    <div id="page4" class="hidden">
+        <div class="frame">
+            <img src="sayang.gif" alt="Framed Content" style="max-width: 100%; height: auto;">
+            <div class="frame-text">Sayang,
+                Makasih ya karena udah mau jadi bagian dari hidup aku. Kamu itu lebih dari sekadar pacar, kamu adalah orang yang selalu bikin aku merasa lengkap. Setiap kali kita bersama, ada rasa damai yang aku rasakan, seolah dunia ini hanya milik kita berdua. Aku sayang banget sama kamu, lebih dari yang bisa aku ungkapkan dengan kata-kata. Kamu adalah alasan aku tersenyum lebih lebar setiap hari, dan setiap momen bersamamu selalu terasa seperti keajaiban.</div>
+        </div>
+        <button class="next-button" onclick="nextPage(5)">Next</button>
+    </div>
+
+    <div id="page5" class="hidden">
+        <div class="frame">
+            <img src="kesehatan.gif" alt="Framed Content" style="max-width: 100%; height: auto;">
+            <div class="frame-text">Sayang,
+                Jaga diri baik-baik ya. Jangan lupa untuk selalu merawat kesehatan, baik fisik maupun mental. Kamu itu sangat berarti, dan aku ingin kamu selalu merasa baik-baik saja. Selalu sempatkan waktu untuk istirahat, makan dengan baik, dan lakukan hal-hal yang bikin kamu bahagia. Aku juga harap kamu selalu bisa menemukan kebahagiaan dalam setiap langkah yang kamu ambil, karena kamu layak untuk itu.
+                
+                Semoga setiap hari kamu dipenuhi dengan kebahagiaan dan ketenangan. Aku akan selalu ada untuk mendukung dan menemanimu.
+                
+                Jaga diri dan tetap bahagia, ya!</div>
+        </div> 
+        <button class="next-button" onclick="nextPage(6)">Next</button>
+    </div>
+
+    <div id="page6" class="hidden">
+        <div class="frame">
+            <img src="JR.jpg" alt="Framed Content" style="max-width: 100%; height: auto;">
+            <div class="frame-text">Serius deh, kadang aku mikir, apakah kamu itu manusia biasa atau kamu tuh superhero yang punya kekuatan super buat bikin hari-hariku lebih cerah? Karena setiap kali aku bareng kamu, semuanya jadi lebih ringan. Bahkan saat aku lagi sibuk atau stres, kamu selalu punya cara buat bikin aku tertawa atau merasa lebih tenang. Aku nggak tahu gimana caranya, tapi kamu selalu tau gimana caranya ngubah hari yang biasa aja jadi luar biasa hanya dengan kehadiran kamu.
+
+                Kamu itu kayak cahaya kecil yang selalu ada di tengah-tengah kegelapan, yang bikin semuanya terasa lebih mudah. Kalau aku lagi ada masalah atau galau, kamu nggak cuma jadi pendengar yang baik, tapi juga jadi orang yang selalu tahu cara bikin aku senyum lagi. Gak perlu kata-kata berat, cuma kehadiran kamu yang udah cukup buat aku ngerasa tenang.
+                
+                Yang paling gokil, kamu bisa bikin aku ketawa, bahkan dari hal-hal paling sederhana sekalipun. Mulai dari tingkah laku konyolmu, sampe jokes-jokes nggak jelas yang cuma kita berdua ngerti. Kamu selalu punya cara buat bikin suasana jadi ringan, dan itu yang aku suka. Aku ngerasa beruntung banget bisa punya kamu yang selalu bisa bikin hari-hariku lebih cerah, lebih bahagia, dan tentunya, lebih seru.
+                
+                Jadi, makasih ya karena selalu ada buat aku, bikin aku merasa dihargai, dicintai, dan pastinya selalu tertawa. Aku sayang banget sama kamu, lebih dari yang bisa aku ungkapkan dengan kata-kata.
+            
+                Love you always, Zafran</div>
+        </div> 
+    </div>
+
+
+    <script>
+        let currentPage = 2;
+
+        // Play the background audio when the heart is clicked
+        function heartClicked() {
+            document.getElementById('page1').classList.add('hidden');
+            document.getElementById('page2').classList.remove('hidden');
+            
+            // Start the audio when the user clicks the heart
+            var audio = document.getElementById('background-audio');
+            audio.play();
+        }
+
+        function nextPage(pageNumber) {
+            document.getElementById('page' + currentPage).classList.add('hidden');
+            document.getElementById('page' + pageNumber).classList.remove('hidden');
+            currentPage = pageNumber;
+        }
+
+        function finish() {
+            alert('Thank you for viewing the pages!');
+            // Optionally reset to first page or navigate elsewhere
+            document.getElementById('page5').classList.add('hidden');
+            document.getElementById('page1').classList.remove('hidden');
+            currentPage = 1;
+        }
+    </script>
+</body>
+</html>
